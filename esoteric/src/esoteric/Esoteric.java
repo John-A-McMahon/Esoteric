@@ -276,7 +276,40 @@ public class Esoteric {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		//compiler in progress?
+
+		//in terminal run:
+		//java Esoteric.java <codeFileName> 
+		//(Without the <> and replace codeFileName with the file of the esoteric language)
+		if(args.length==1) {
+			String code = "";
+			try {
+				System.out.println("RUNNING "+args[0]+": ");
+				String line = "";
+				BufferedReader reader = new BufferedReader(new FileReader(args[0]));
+				while((line=reader.readLine())!=null) {
+					code+=line;
+				}
+				
+				
+				code=esotericCompile(code);
+				printEsoteric(code);
+				System.out.println(esotericRaw(code));
+				System.out.println("Done" );
+				reader.close();
+				
+				
+				//wont run Demos
+				return;
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("RUNNING Demo programs: ");
+		String demo = "NCHE";
+		System.out.println(esotericRaw(demo));
 		//Hello world Program
 		String code="RETURNTYPE:STRING"
 				+ "RIGHT\r\n"
