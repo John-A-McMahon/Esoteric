@@ -42,7 +42,12 @@ NCN...E (runs if tape is on a 0)
 
 ********************************************************************************************
 To compile run:
-java Esoteric.java <codeFileName>
+
+go to src directory
+
+java esoteric.Esoteric <codeFileName>
+(the code file is provided to test it)
+if no code file is provided then it will run some demos
 
 *******************************************************************************************
 
